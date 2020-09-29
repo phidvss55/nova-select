@@ -41,7 +41,9 @@ class Product extends Resource
      */
     public function fields(Request $request)
     {
-        $options = Category::all();
+        $names = Category::all()->pluck('name')->toArray();
+        $ids = Category::all()->pluck('id')->toArray();
+        $options = array_combine($ids, $names);
 
         return [
             ID::make(__('ID'), 'id')->sortable(),

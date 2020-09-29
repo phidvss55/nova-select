@@ -16,6 +16,7 @@ class CategoryPicker extends Field
 
     public function options($options, $selected = [])
     {
+//        dd(collect($options)->map());
         return $this->withMeta([
             'options' => collect($options ?? [])->map(function ($label, $value) use ($selected) {
                 return [

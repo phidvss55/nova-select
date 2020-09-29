@@ -1,7 +1,8 @@
 <template>
     <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
         <template slot="field">
-            <select ref="multiselect" multiple="multiple" :id="field.name"></select>
+            <select ref="multiselect" :id="field.name"></select>
+<!--            <select ref="multiselect" multiple="multiple" :id="field.name"></select>-->
         </template>
     </default-field>
 </template>
@@ -24,17 +25,21 @@ export default {
             this.value = this.field.value || ''
 
             $(this.$refs.multiselect).select2({
-                width: '100%', // need to override the changed default
+                width: '100%',
                 data: this.field.options,
             })
+
+            console.log(this.field)
+            console.log(this.field.options)
         },
 
         /**
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            // formData.append(this.field.attribute, this.value || '')
-            const values = JSON.stringify($(this.$refs.multiselect).val())
+
+            const values = $(this.$refs.multiselect).val()
+
             formData.append(this.field.attribute, values || '')
         },
 
