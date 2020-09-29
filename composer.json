@@ -14,7 +14,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "laravel/nova": "*"
+        "laravel/nova": "*",
+        "nova/category-picker": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
@@ -32,6 +33,10 @@
         {
             "type": "path",
             "url": "./nova"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/CategoryPicker"
         }
     ],
     "extra": {

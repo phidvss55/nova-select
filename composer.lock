@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eeed26a2cc1a5d4e9bc1ddbe7f982dd6",
+    "content-hash": "73d9c356ad3c3e0889fa31132df595ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1112,16 +1112,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.6.0",
+            "version": "v8.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a71952a6dba55de0bb11b5fbbd84874eda2a755c"
+                "reference": "72bf073a49640fef4c38ec3153401a48e4ede4b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a71952a6dba55de0bb11b5fbbd84874eda2a755c",
-                "reference": "a71952a6dba55de0bb11b5fbbd84874eda2a755c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/72bf073a49640fef4c38ec3153401a48e4ede4b5",
+                "reference": "72bf073a49640fef4c38ec3153401a48e4ede4b5",
                 "shasum": ""
             },
             "require": {
@@ -1271,7 +1271,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-09-22T13:42:02+00:00"
+            "time": "2020-09-29T14:39:06+00:00"
         },
         {
             "name": "laravel/nova",
@@ -1916,6 +1916,39 @@
                 "php"
             ],
             "time": "2020-09-26T10:30:38+00:00"
+        },
+        {
+            "name": "nova/category-picker",
+            "version": "dev-feature/#select_field",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/CategoryPicker",
+                "reference": "23c57a5390a123a045845aff5e4e25290b3ef7ce"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nova\\CategoryPicker\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nova\\CategoryPicker\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "opis/closure",

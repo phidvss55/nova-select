@@ -4,7 +4,9 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Text;
+use Nova\CategoryPicker\CategoryPicker;
+use App\Models\Category;
 
 class Product extends Resource
 {
@@ -28,7 +30,7 @@ class Product extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name'
     ];
 
     /**
@@ -39,8 +41,16 @@ class Product extends Resource
      */
     public function fields(Request $request)
     {
+        $options = Category::all();
+
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
+            Text::make('Name', 'name'),
+
+            CategoryPicker::make('Category', 'category_id')
+              ->options($options),
+
         ];
     }
 
